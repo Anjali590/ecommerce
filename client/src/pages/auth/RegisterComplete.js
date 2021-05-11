@@ -3,8 +3,15 @@ import { auth } from "../../firebase";
 import { toast} from "react-toastify";
 
 
-const Register = () => {
+const RegisterComplete = () => {
   const [email, setEmail] = useState("");
+  const [password,setPassword] = useState('');
+
+  useState(()=> {
+      console.log(window.localStorage.getItem('emailForRegisteration'))
+  },[])
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,7 +31,7 @@ const Register = () => {
     setEmail("");
   };
 
-  const registerForm = () => (
+  const CompleteregisterForm = () => (
     <form onSubmit={handleSubmit}>
       <input
         type="email"
@@ -45,11 +52,11 @@ const Register = () => {
       <div className="row">
         <div className="col-md-6 offset-md-3">
           <h4>Register</h4>
-          {registerForm()}
+          {CompleteregisterForm()}
         </div>
       </div>
     </div>
   );
 };
 
-export default Register;
+export default RegisterComplete;
