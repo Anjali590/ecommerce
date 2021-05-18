@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import { auth } from "../../firebase";
-import { toast} from "react-toastify";
-
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
   const [email, setEmail] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(process.env.REACT_APP_REGISTER_REDIRECT_URL);
     const config = {
-      url: process.env.REACT_APP_REGISTER_REDIRECT_URL,
+      url: "http://localhost:3000/register/complete",
       handleCodeInApp: true,
     };
 
@@ -33,6 +32,7 @@ const Register = () => {
         onChange={(e) => setEmail(e.target.value)}
         autoFocus
       />
+      <br/>
 
       <button type="submit" className="btn btn-raised">
         Register
@@ -45,6 +45,7 @@ const Register = () => {
       <div className="row">
         <div className="col-md-6 offset-md-3">
           <h4>Register</h4>
+          <ToastContainer />
           {registerForm()}
         </div>
       </div>
