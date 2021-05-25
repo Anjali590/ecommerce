@@ -3,6 +3,8 @@ import "firebase/auth";
 
 
 
+
+
 // Your web app's Firebase configuration
 var config = {
     apiKey: "AIzaSyBlS_Sl1e6MfH3GNTYzQBokI5WWXVpGyjU",
@@ -15,6 +17,9 @@ var config = {
   if (!firebase.apps.length) {
     firebase.initializeApp(config);
   }
+
+
+
   // export
   // export default firebase;
   export const auth = firebase.auth();
