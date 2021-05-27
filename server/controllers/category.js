@@ -1,4 +1,4 @@
-const Category = require("../models/category");
+/*const Category = require("../models/category");
 const slugify = require("slugify");
 
 exports.create = async (req, res) => {
@@ -43,3 +43,4 @@ exports.remove = async (req, res) => {
     res.status(400).send("Create delete failed");
   }
 };
+*/

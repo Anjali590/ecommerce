@@ -1,10 +1,15 @@
 const admin = require("../firebase");
 
 
-exports.authCheck = (req, res, next) => {
+
+  exports.authCheck = (req, res, next) => {
+    console.log(req.headers); // token
+    next();
+  };
+  
 
  // console.log(req.headers); // token
- try {
+/* try {
   const firebaseUser = await admin
     .auth()
     .verifyIdToken(req.headers.authtoken);
@@ -17,4 +22,4 @@ exports.authCheck = (req, res, next) => {
   });
 }
   //next();
-};
+};*/
